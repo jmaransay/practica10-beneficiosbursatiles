@@ -12,15 +12,17 @@ url <- 'https://www.moneycontrol.com/stocks/marketstats/nse-gainer/nifty-500_7/'
 
 url_html <- read_html(url)
 
-save (url_html, file ="data/source.html")
-
 #table extraction
 
 url_tables <- url_html %>% html_table(fill = TRUE)
 
+url_tables
+
 #extract relevant table
 
 top_gainers <- url_tables[[2]]
+
+top_gainers
 
 #extract relevant columns
 
